@@ -24,6 +24,7 @@ export default function UpdateTasks() {
   return (
     <>
       <Navbar />
+      <br />
       {tasks.map((task) => (
         <Link href={`/updatetasks/${task.id}`}>
           <Task children={task} />

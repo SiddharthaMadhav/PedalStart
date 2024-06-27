@@ -5,11 +5,27 @@ import Link from "next/link";
 
 function Navbar() {
   return (
-    <nav>
-      <Link href="/tasks">All tasks</Link>
-      <Link href="/newtask">New tasks</Link>
-      <Link href="/updatetasks">Update tasks</Link>
-      <Link href="/deletetasks">Delete tasks</Link>
+    <nav
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        fontSize: "20px",
+        marginBottom: "50px",
+      }}
+    >
+      <Link href="/tasks" style={{ marginRight: "1rem" }}>
+        All tasks
+      </Link>
+      <Link href="/newtask" style={{ marginRight: "1rem" }}>
+        New tasks
+      </Link>
+      <Link href="/updatetasks" style={{ marginRight: "1rem" }}>
+        Update tasks
+      </Link>
+      <Link href="/deletetasks" style={{ marginRight: "1rem" }}>
+        Delete tasks
+      </Link>
+      <br />
     </nav>
   );
 }

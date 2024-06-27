@@ -36,8 +36,7 @@ export default function ModifyTask({ params }) {
     newtasks[id - 1].dueDate = date;
     setTasks(newtasks);
     console.log(newtasks);
-
-    /*API calls needed here*/
+    const response = await axios.put("/api", newtasks[id - 1]);
     router.push("/tasks");
   }
 

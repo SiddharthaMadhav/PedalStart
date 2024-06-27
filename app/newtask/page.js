@@ -6,24 +6,28 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 export default function NewTask() {
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [date, setDate] = useState("");
+  const [stitle, setTitle] = useState("");
+  const [sdescription, setDescription] = useState("");
+  const [sdate, setDate] = useState("");
   const router = useRouter();
 
   async function formSubmit(event) {
     event.preventDefault();
-    console.log(title + " " + description + " " + date);
+    console.log(stitle + " " + sdescription + " " + sdate);
     /*API calls needed here*/
+    let newtasks = {
+      title: stitle,
+      description: sdescription,
+      date: sdate,
+    };
+    const response = await axios.post("/api", newtasks);
     router.push("/tasks");
   }
 
   return (
     <div>
       <Navbar />
-      <div>{title}</div>
-      <div>{description}</div>
-      <div>{date}</div>
+      <br />
       <form onSubmit={formSubmit}>
         <label for="title">Title:</label>
         <br />

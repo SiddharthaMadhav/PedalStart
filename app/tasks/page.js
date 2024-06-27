@@ -23,7 +23,7 @@ const Tasks = () => {
   };
 
   return (
-    <>
+    <div>
       <Navbar />
       <h1>Tasks</h1>
       <br />
@@ -32,7 +32,7 @@ const Tasks = () => {
       {tasks.map((task) => (
         <Task children={task} />
       ))}
-    </>
+    </div>
   );
 };
 

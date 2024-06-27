@@ -21,10 +21,9 @@ export default function DeleteTasks() {
     console.log(response);
   };
 
-  function divDelete(e) {
+  async function divDelete(e) {
     const newtasks = tasks.filter((t) => t.id != e.currentTarget.id);
-    console.log(typeof e.target.id);
-    console.log(e.target.id);
+    const response = await axios.delete("/api", e.currentTarget.id);
     setTasks(newtasks);
     console.log(newtasks);
   }
@@ -32,6 +31,7 @@ export default function DeleteTasks() {
   return (
     <>
       <Navbar />
+      <br />
       {tasks.map((task) => (
         <div id={task.id} onClick={divDelete}>
           <Task children={task} />
